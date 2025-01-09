@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 stack: 'Stack 1'
             },
             {
-                label: 'McKinsey Sub',
+                label: 'McKinsey Subcontracts',
                 data: [NaN, NaN, NaN, NaN, NaN, 8548414.9, 1847630.4, 31373326.28, 23618083.939999998, 19099977.69, 21421107.84, 21542818.57, 9885868.59, 4986958.0, 14633086.8, 42117563.14, 27108363.28, 18591477.8],
                 backgroundColor: 'rgba(4, 36, 64, 0.7)',
                 stack: 'Stack 1'
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 stack: 'Stack 2'
             },
             {
-                label: 'BCG Sub',
+                label: 'BCG Subcontracts',
                 data: [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 7378133.68, 249458.0, 74985.0, NaN, 25259601.7, 23292530.94, 158192532.91, 156058133.36, 75023957.96],
                 backgroundColor: 'rgba(20, 123, 88, 0.7)',
                 stack: 'Stack 2'
