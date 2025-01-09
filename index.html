@@ -35,7 +35,6 @@
 								<h1>Hi, I'm <strong>Will Karpie</strong>.</h1>
 							</header>
 							<p>I am a strategy consultant, Columbia MBA, and U.S. Navy veteran. <br> This webpage is a collection of my ameteur projects.</p>
-							<a href="#work" class="button large scrolly">Learn about what I do</a>
 						</div>
 					</div>
 				</div>
@@ -45,30 +44,22 @@
 			<article id="work" class="wrapper style2">
 				<div class="container">
 					<header>
-						<h2>Here's all the stuff I do.</h2>
-						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+						<h2>McKinsey and BCG's Federal Contracting Activities</h2>
+						<p>This project uses Python to retrieve, format, and display contract award data from the USAspending API. The charts below are results from this script and were last updated January 2025.</p>
 					</header>
 					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-comments"></span>
-								<h3>Consequat lorem</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon solid featured fa-camera-retro"></span>
-								<h3>Lorem dolor tempus</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="icon featured fa-thumbs-up"></span>
-								<h3>Feugiat posuere</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
-							</section>
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Stacked Bar Chart with 2 Groups</title>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        </head>
+                        <body>
+                            <div style="width: 100%; margin: 1 auto;">
+                                <canvas id="fedcontractschart"></canvas>
+                            </div>
+                            <script src="assets/js/fedcontractschart.js"></script>
+                        </body>
 						</div>
 					</div>
 					<footer>
@@ -209,6 +200,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+            <script src="assets/js/chart.js"></script>
+            <script src="assets/js/fedcontractschart.js"></script>
 
 	</body>
 </html>
