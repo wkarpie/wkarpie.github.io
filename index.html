@@ -17,7 +17,7 @@
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="#Will Karpie">Will Karpie</a></li>
-					<li><a href="#Contract Analysis">Contract Analysis</a></li>
+					<li><a href="#Public Sector">Public Sector</a></li>
 					<li><a href="#portfolio">Portfolio</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
@@ -40,12 +40,12 @@
 				</div>
 			</article>
 
-		<!-- Contract Analysis -->
-			<article id="Contract Analysis" class="wrapper style2">
+		<!-- Public Sector -->
+			<article id="Public Sector" class="wrapper style2">
 				<div class="container">
 					<header>
-						<h2>McKinsey and BCG's Federal Contracting Activities</h2>
-						<p>This project uses Python to retrieve, format, and display contract award data from the USAspending API. The charts below are results from this script and were last updated January 2025.</p>
+						<h2>Strategy Firms in the Public Sector</h2>
+						<p>McKinsey and BCG have both generated substantial revenues as prime contractors for the U.S. government. In recent years, their roles as subcontractors have expanded significantly.</p>
 					</header>
 					<div class="row aln-center">
                         <head>
@@ -60,10 +60,27 @@
                             </div>
                             <script src="assets/js/fedcontractschart.js"></script>
                         </body>
+                    </div>
+                    <div class="row aln-center" style="margin-top: 40px;">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>donut</title>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <body>
+                            <div style="width: 50%; margin: 1 auto;">
+                                <canvas id="mcklast12"></canvas>
+                            </div>
+                            <script src="assets/js/mcklast12.js"></script>
+                            <div style="width: 50%; margin: 1 auto;">
+                                <canvas id="bcglast12"></canvas>
+                            </div>
+                            <script src="assets/js/bcglast12.js"></script>
+                        </body>
 						</div>
-					</div>
+                    </div>
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis</p>
+                        <p> This data is sourced from the <a href="https://api.usaspending.gov/">USAspending API</a> using a <a href="https://github.com/wkarpie/MBUSAspendingAwards">Python</a> to retrieve, format, and display contract award data. The charts above were last updated January 2025.</p>
 					</footer>
 				</div>
 			</article>
@@ -72,7 +89,7 @@
 			<article id="portfolio" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>Here’s some other stuff I made recently.</h2>
+						<h2>Other stuff I made recently.</h2>
 						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
 					</header>
 					<div class="row">
@@ -201,6 +218,7 @@
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/chart.js"></script>
             <script src="assets/js/fedcontractschart.js"></script>
-
+            <script src="assets/js/mcklast12.js"></script>
+            <script src="assets/js/bcglast12.js"></script>
 	</body>
 </html>
