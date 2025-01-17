@@ -12,13 +12,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="#Will Karpie">Will Karpie</a></li>
 					<li><a href="#Public Sector">Public Sector</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#Biopharma Strategy">Biopharma</a></li>
+					<li><a href="#portfolio">Other Projects</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -48,100 +48,88 @@
 						<p>McKinsey and BCG have both generated substantial revenues as prime contractors for the U.S. government. In recent years, their roles as subcontractors have expanded significantly.</p>
 					</header>
 					<div class="row aln-center">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Stacked Bar Chart with 2 Groups</title>
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                        </head>
-                        <body>
-                            <div style="width: 100%; margin: 1 auto;">
-                                <canvas id="fedcontractschart"></canvas>
-                            </div>
-                            <script src="assets/js/fedcontractschart.js"></script>
-                        </body>
-                    </div>
-                    <div class="row aln-center" style="margin-top: 40px;">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>donut</title>
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                        <body>
-                            <div style="width: 50%; margin: 1 auto;">
-                                <canvas id="mcklast12"></canvas>
-                            </div>
-                            <script src="assets/js/mcklast12.js"></script>
-                            <div style="width: 50%; margin: 1 auto;">
-                                <canvas id="bcglast12"></canvas>
-                            </div>
-                            <script src="assets/js/bcglast12.js"></script>
-                        </body>
-						</div>
-                    </div>
+						<head>
+							<meta charset="UTF-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<title>Stacked Bar Chart with 2 Groups</title>
+							<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+						</head>
+						<body>
+							<div style="width: 100%; margin: 1 auto;">
+								<canvas id="fedcontractschart"></canvas>
+							</div>
+							<div style="width: 100%; margin: 1 auto;">
+								<canvas id="mckforecast" style="width: 100%"></canvas>
+							</div>
+							<div style="width: 100%; margin: 1 auto;">
+								<canvas id="bcgforecast" style="width: 100%"></canvas>
+							</div>
+						</body>
+					</div>
+
 					<footer>
-                        <p> This data is sourced from the <a href="https://api.usaspending.gov/">USAspending API</a> using <a href="https://github.com/wkarpie/MBUSAspendingAwards">Python</a> to retrieve, format, and display contract award data. The charts above were last updated January 2025.</p>
+						<p> This data is sourced from the <a href="https://api.usaspending.gov/">USAspending API</a> using <a href="https://github.com/wkarpie/MBUSAspendingAwards">Python</a> to retrieve, format, and display contract award data. The charts above were last updated January 2025.</p>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Biopharma -->
+			<article id="Biopharma Strategy" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Biopharma Strategy Review</h2>
+						<p>Operating in unpredictable environments and seeking unprecedented opportunities, leading biopharma companies continue to employ adaptive and visionary strategies.</p>
+					</header>
+					<div class="row aln-center">
+						<head>
+							<meta charset="UTF-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<title>Area chart</title>
+							<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+						</head>
+					<body>
+						<div style="width: 100%; margin: 1 auto;">
+							<canvas id="biopharmaarea"></canvas>
+						</div>
+					</body>
+					<footer>
+						<p>This analysis was conducted by aggregating and reviewing the annual filings of select large- and mid-cap biopharma companies.</p>
 					</footer>
 				</div>
 			</article>
 
 		<!-- Portfolio -->
-			<article id="portfolio" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>My Projects</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Magna feugiat</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Veroeros primis</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Lorem ipsum</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
-							</article>
-						</div>
+		<article id="portfolio" class="wrapper style5">
+			<div class="container">
+				<header>
+					<h2>Other Projects</h2>
+					<p>Check out a few other things I have been working on.</p>
+				</header>
+				<div class="row">
+					<div class="col-4 col-6-medium col-12-small">
+						<article class="box style2">
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<h3><a href="#">"Peer" Review</a></h3>
+							<p>Keeping up with Dr. Karpie and lattice quantum chromodynamics.</p>
+						</article>
 					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis</p>
-						<a href="#contact" class="button large scrolly">Get in touch with me</a>
-					</footer>
+					<div class="col-4 col-6-medium col-12-small">
+						<article class="box style2">
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<h3><a href="#">Formula 1</a></h3>
+							<p>Excel workbooks with challenges to race through.</p>
+						</article>
+					</div>
+					<div class="col-4 col-6-medium col-12-small">
+						<article class="box style2">
+							<a href="https://www.velocityride.org/index.cfm?fuseaction=donorDrive.participant&participantID=5730" class="image featured"><img src="images/velocityride3.jpg" alt="" /></a>
+							<h3><a href="https://www.velocityride.org/index.cfm?fuseaction=donorDrive.participant&participantID=5730">Support My Fundraiser</a></h3>
+							<p>Join me in raising funds for cancer research.</p>
+						</article>
+					</div>
 				</div>
-			</article>
+			</div>
+		</article>			
 
 		<!-- Contact -->
 			<article id="contact" class="wrapper style4">
@@ -211,8 +199,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/chart.js"></script>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
             <script src="assets/js/fedcontractschart.js"></script>
-            <script src="assets/js/mcklast12.js"></script>
-            <script src="assets/js/bcglast12.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+			<script src="assets/js/biopharmaarea.js"></script>			
+            <script src="assets/js/mckforecast.js"></script>
+            <script src="assets/js/bcgforecast.js"></script>			
 	</body>
 </html>

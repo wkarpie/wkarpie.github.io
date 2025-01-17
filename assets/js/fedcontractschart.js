@@ -1,33 +1,58 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const ctx = document.getElementById('fedcontractschart').getContext('2d');
+
+    // Load the CSV file from GitHub
+    const url = 'https://raw.githubusercontent.com/wkarpie/MBUSAspendingAwards/main/data.csv';
+    const response = await fetch(url);
+    const csvText = await response.text();
+    const csvData = csvText.split('\n').map(row => row.split(','));
+
+    console.log('CSV data:', csvData);
+
+    // Parse the CSV data into the format required by Chart.js
+    const labels = csvData.map(row => row[0]).slice(1); // Get the years from the first column
+    const datasets = [
+        {
+            label: 'McKinsey Prime',
+            data: csvData.map(row => row[1]).slice(1).map(value => value === ''? NaN : Number(value)),
+            backgroundColor: 'rgba(4, 36, 64, 0.9)',
+            stack: 'Stack 1'
+        },
+        {
+            label: 'McKinsey Subcontracts',
+            data: csvData.map(row => row[2]).slice(1).map(value => value === ''? NaN : Number(value)),
+            backgroundColor: 'rgba(4, 36, 64, 0.7)',
+            stack: 'Stack 1'
+        },
+        {
+            label: 'BCG Prime',
+            data: csvData.map(row => row[3]).slice(1).map(value => value === ''? NaN : Number(value)),
+            backgroundColor: 'rgba(20, 123, 88, 0.9)',
+            stack: 'Stack 2'
+        },
+        {
+            label: 'BCG Subcontracts',
+            data: csvData.map(row => row[4]).slice(1).map(value => value === ''? NaN : Number(value)),
+            backgroundColor: 'rgba(20, 123, 88, 0.7)',
+            stack: 'Stack 2'
+        }
+    ];
+
+    // Remove the last element if it's empty
+    if (labels[labels.length - 1] === '') {
+        labels.pop();
+        datasets[0].data.pop();
+        datasets[1].data.pop();
+        datasets[2].data.pop();
+        datasets[3].data.pop();
+    }
+
+    console.log('Labels:', labels);
+    console.log('Datasets:', datasets);
+
     const data = {
-        labels: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-        datasets: [
-            {
-                label: 'McKinsey Prime',
-                data: [24915831.09, 43523506.69, 69426690.32000001, 49472844.06, 40095671.93, 25524943.740000002, 61486301.32, 40531262.91, 49066210.19, 98225430.78999999, 172418455.89, 35071495.24, 118656189.99000001, 85493842.97999999, 41542438.89, 64654657.33, 34538275.5, 3878833.45],
-                backgroundColor: 'rgba(4, 36, 64, 0.9)',
-                stack: 'Stack 1'
-            },
-            {
-                label: 'McKinsey Subcontracts',
-                data: [NaN, NaN, NaN, NaN, NaN, 8548414.9, 1847630.4, 31373326.28, 23618083.939999998, 19099977.69, 21421107.84, 21542818.57, 9885868.59, 4986958.0, 14633086.8, 42117563.14, 27108363.28, 18591477.8],
-                backgroundColor: 'rgba(4, 36, 64, 0.7)',
-                stack: 'Stack 1'
-            },
-            {
-                label: 'BCG Prime',
-                data: [NaN, 4490614.93, 1846558.23, 4875113.07, 1210767.88, 3511833.7, 1866797.73, 7457755.17, 69913597.32, 35692346.88, 158867852.51, 168073307.48, 295379991.33, 145233666.4, 403936395.36, 293390557.53999996, 192350058.76999998, NaN],
-                backgroundColor: 'rgba(20, 123, 88, 0.9)',
-                stack: 'Stack 2'
-            },
-            {
-                label: 'BCG Subcontracts',
-                data: [NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, 7378133.68, 249458.0, 74985.0, NaN, 25259601.7, 23292530.94, 158192532.91, 156058133.36, 75023957.96],
-                backgroundColor: 'rgba(20, 123, 88, 0.7)',
-                stack: 'Stack 2'
-            }
-        ]
+        labels: labels,
+        datasets: datasets
     };
 
     const options = {
@@ -41,9 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 text: 'Comparison of McKinsey and BCG\'s Federal Contract Awards',
                 font: {
                     size: 20
-                }
+                },
             }
-        },        
+        },
         scales: {
             x: {
                 stacked: true
@@ -54,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     callback: function(value, index, ticks) {
                         return '$' + value / 1000000 + 'M';
                     }
-            }   }
+                }
+            }
         }
     };
 
@@ -63,4 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         data: data,
         options: options
     });
+
+    console.log('Chart created');
 });
