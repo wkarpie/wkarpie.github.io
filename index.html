@@ -15,16 +15,16 @@
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
-					<li><a href="#Will Karpie">Will Karpie</a></li>
-					<li><a href="#Public Sector">Public Sector</a></li>
-					<li><a href="#Biopharma Strategy">Biopharma</a></li>
+					<li><a href="#bio">Will Karpie</a></li>
+					<li><a href="#publicsector">Public Sector</a></li>
+					<li><a href="#biopharma">Biopharma</a></li>
 					<li><a href="#portfolio">Other Projects</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 
 		<!-- Home -->
-			<article id="Will Karpie" class="wrapper style1">
+			<article id="bio" class="wrapper style1">
 				<div class="container">
 					<div class="row">
 						<div class="col-4 col-5-large col-12-medium">
@@ -33,52 +33,60 @@
 						<div class="col-8 col-7-large col-12-medium align-items-center">
 							<header>
 								<h1><br><br><br><br>Hi, I'm <strong>Will Karpie</strong>.</h1>
+								<p>I am a strategy consultant, Columbia MBA, and U.S. Navy veteran. <br> This webpage is a collection of my ameteur projects, tools, and things I found interesting.</p>
+
 							</header>
-							<p>I am a strategy consultant, Columbia MBA, and U.S. Navy veteran. <br> This webpage is a collection of my ameteur projects, tools, and things I found interesting.</p>
 						</div>
 					</div>
 				</div>
 			</article>
 
 		<!-- Public Sector -->
-			<article id="Public Sector" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Strategy Firms in the Public Sector</h2>
-						<p>McKinsey and BCG have both generated substantial revenues as prime contractors for the U.S. government. In recent years, their roles as subcontractors have expanded significantly.</p>
-					</header>
-					<div class="row aln-center">
-						<head>
-							<meta charset="UTF-8">
-							<meta name="viewport" content="width=device-width, initial-scale=1.0">
-							<title>Stacked Bar Chart with 2 Groups</title>
-							<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-						</head>
-						<body>
-							<div style="width: 100%; margin: 1 auto;">
-								<canvas id="fedcontractschart"></canvas>
-							</div>
-							<div style="width: 100%; margin: 1 auto;">
-								<canvas id="mckforecast" style="width: 100%"></canvas>
-							</div>
-							<div style="width: 100%; margin: 1 auto;">
-								<canvas id="bcgforecast" style="width: 100%"></canvas>
-							</div>
-						</body>
+		<article id="publicsector" class="wrapper style2">
+			<div class="container">
+				<header>
+					<h2>Strategy Firms in the Public Sector</h2>
+					<p>McKinsey and BCG have both generated substantial revenues as prime contractors for the U.S. federal government. In recent years, their roles as subcontractors have expanded significantly.</p>
+				</header>
+				<div class="row aln-center">
+					<div style="width: 100%;">
+						<canvas id="fedcontractschart"></canvas>
 					</div>
-
-					<footer>
-						<p> This data is sourced from the <a href="https://api.usaspending.gov/">USAspending API</a> using <a href="https://github.com/wkarpie/MBUSAspendingAwards">Python</a> to retrieve, format, and display contract award data. The charts above were last updated January 2025.</p>
-					</footer>
+					<div style="width: 100%;">
+						<h3><br>Federal Contracting Summary by Firm</h3>
+						<button id="mck-button" onclick="showMckForecast()" style="font-size: 1.2em; width: 12em; height: 75px; background-color:rgba(4, 36, 64, 0.9); color: #ffffff;">McKinsey</button>
+						<button id="bcg-button" onclick="showBcgForecast()" disabled style="font-size: 1.2em; width: 12em; height: 75px; background-color: rgba(20, 123, 88, 0.9); color: #ffffff;">BCG</button>
+					</div>
+				<!-- 
+					<div style="width: 50%; display:false;">
+						<canvas id="mckpie"></canvas>
+					</div>
+					<div style="width: 50%;display:false;">
+						<canvas id="bcglast12"></canvas>
+					</div>
+				-->
+					<div style="width: 100%" id="mckforecast-container">
+						<canvas id="mckforecast" style="width: 100%"></canvas>
+					</div>
+					<div style="width: 100%" id="bcgforecast-container">
+						<canvas id="bcgforecast" style="width: 100%"></canvas>
+					</div>
 				</div>
-			</article>
+				
+				<footer>
+					<p> This data is sourced from the <a href="https://api.usaspending.gov/">USAspending API</a> using <a href="https://github.com/wkarpie/MBUSAspendingAwards">Python</a> to retrieve, format, and display contract award data. The charts above were last updated January 2025.</p>
+				</footer>
+			</div>
+		</article>
 
 		<!-- Biopharma -->
-			<article id="Biopharma Strategy" class="wrapper style3">
+			<article id="biopharma" class="wrapper style3">
 				<div class="container">
 					<header>
 						<h2>Biopharma Strategy Review</h2>
-						<p>Operating in unpredictable environments and seeking unprecedented opportunities, leading biopharma companies continue to employ adaptive and visionary strategies.</p>
+						<p>The <a href="https://www.bcg.com/publications/collections/your-strategy-needs-strategy/intro">strategy palette</a> is a framework to organize strategies into 
+							five approaches: classical, adaptive, visionary, shaping, and renewal. Biopharma companies,
+							who operate in unpredictable environments and seek unprecedented opportunities, frequently rely on adaptive and visionary strategies.</p>
 					</header>
 					<div class="row aln-center">
 						<head>
@@ -93,8 +101,10 @@
 						</div>
 					</body>
 					<footer>
-						<p>This analysis was conducted by aggregating and reviewing the annual filings of select large- and mid-cap biopharma companies.</p>
-					</footer>
+						<p>This longitudinal study reviews hundreds of annual filings of select of large- and mid-cap biopharma companies, leveraging <a href="https://ai.google.dev/gemini-api/docs?gad_source=1&gclid=CjwKCAiAnKi8BhB0EiwA58DA4QzdJ0xihjCm5NzUgzrJ6arO2ZBFslWoeCusesrKMoRfI9moBd7wCxoCjqkQAvD_BwE">Google's Gemini API</a> 
+							and the <a href="https://www.sec.gov/search-filings/edgar-application-programming-interfaces">SEC's API</a>.
+							</p>
+						</footer>
 				</div>
 			</article>
 
@@ -103,23 +113,24 @@
 			<div class="container">
 				<header>
 					<h2>Other Projects</h2>
-					<p>Check out a few other things I have been working on.</p>
 				</header>
-				<div class="row">
+				<div class="row aln-center">
 					<div class="col-4 col-6-medium col-12-small">
 						<article class="box style2">
 							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
 							<h3><a href="#">"Peer" Review</a></h3>
-							<p>Keeping up with Dr. Karpie and lattice quantum chromodynamics.</p>
+							<p>Keeping up with <a href="https://inspirehep.net/authors/1626496">Dr. Karpie</a> and lattice quantum chromodynamics.</p>				
 						</article>
 					</div>
+					<!--
 					<div class="col-4 col-6-medium col-12-small">
 						<article class="box style2">
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<a href="#" class="image featured"><img src="images/pic02a.jpg" alt="" /></a>
 							<h3><a href="#">Formula 1</a></h3>
 							<p>Excel workbooks with challenges to race through.</p>
 						</article>
 					</div>
+					-->
 					<div class="col-4 col-6-medium col-12-small">
 						<article class="box style2">
 							<a href="https://www.velocityride.org/index.cfm?fuseaction=donorDrive.participant&participantID=5730" class="image featured"><img src="images/velocityride3.jpg" alt="" /></a>
@@ -204,6 +215,25 @@
 			<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 			<script src="assets/js/biopharmaarea.js"></script>			
             <script src="assets/js/mckforecast.js"></script>
-            <script src="assets/js/bcgforecast.js"></script>			
+            <script src="assets/js/bcgforecast.js"></script>
+			<script src="assets/js/bcglast12.js"></script>
+            <script src="assets/js/mckpie.js"></script>
+
+			<script>
+				function showMckForecast() {
+					document.getElementById("mckforecast-container").style.display = "block";
+					document.getElementById("bcgforecast-container").style.display = "none";
+					document.getElementById("mck-button").disabled = true;
+					document.getElementById("bcg-button").disabled = false;
+				}
+			
+				function showBcgForecast() {
+					document.getElementById("mckforecast-container").style.display = "none";
+					document.getElementById("bcgforecast-container").style.display = "block";
+					document.getElementById("mck-button").disabled = false;
+					document.getElementById("bcg-button").disabled = true;
+				}
+			</script>	
+            <script src="assets/js/fedcontracttoggle.js"></script>
 	</body>
 </html>

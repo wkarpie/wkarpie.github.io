@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                         display: true,
                         text: 'Strategic Approach Distribution in the Biopharma Industry',
                         font: {
-                            size: 20
-                        }
+                            size: 20,
+                            fontFamily: 'Open Sans', // H2 CSS
+                        },
+                        color:'#3e3e3e', // set the text color to dark grey 
                     },
                     tooltip: {
                         mode: 'index',

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const labels = csvData.map(row => row[0]).slice(1); // Get the years from the first column
     const datasets = [
         {
-            label: 'McKinsey Prime',
+            label: 'McKinsey Prime Awards',
             data: csvData.map(row => row[1]).slice(1).map(value => value === ''? NaN : Number(value)),
             backgroundColor: 'rgba(4, 36, 64, 0.9)',
             stack: 'Stack 1'
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             stack: 'Stack 1'
         },
         {
-            label: 'BCG Prime',
+            label: 'BCG Prime Awards',
             data: csvData.map(row => row[3]).slice(1).map(value => value === ''? NaN : Number(value)),
             backgroundColor: 'rgba(20, 123, 88, 0.9)',
             stack: 'Stack 2'
@@ -65,8 +65,19 @@ document.addEventListener('DOMContentLoaded', async function () {
                 display: true,
                 text: 'Comparison of McKinsey and BCG\'s Federal Contract Awards',
                 font: {
-                    size: 20
+                    size: 20,
+                    fontFamily: 'Open Sans', // inherit the font family from the parent element
                 },
+                color: '#3e3e3e', // set the text color to black
+            },
+            tooltip: {
+                callbacks: {
+                    // Format the tooltip label to show in millions
+                    label: function(tooltipItem) {
+                        let value = tooltipItem.raw;
+                        return tooltipItem.dataset.label + ': $' + (value / 1000000).toFixed(1) + 'M';
+                    }
+                }
             }
         },
         scales: {

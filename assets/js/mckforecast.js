@@ -1,3 +1,5 @@
+var mckHeight = 0;
+
 document.addEventListener('DOMContentLoaded', async function () {
   const ctx = document.getElementById('mckforecast').getContext('2d');
   const canvas = document.getElementById('mckforecast'); // Get the canvas element
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     
     // Set the height of the canvas element
     canvas.height = chartHeight; // This will update the canvas height directly
+    mckHeight = chartHeight;
 
   const options = {
       responsive: true,
@@ -71,9 +74,13 @@ document.addEventListener('DOMContentLoaded', async function () {
           },
           title: {
               display: true,
-              text: 'McKinsey Prime Contract Pipeline',
-              font: { size: 20 }
-          },
+              text: 'Prime Contract Pipeline',
+              font: {
+                size: 20,
+                fontFamily: 'Open Sans', // inherit the font family from the parent element
+            },
+            color: '#3e3e3e', // set the text color to black
+        },
       },
       scales: {
           y: { stacked: true },

@@ -64,14 +64,30 @@ document.addEventListener('DOMContentLoaded', async function () {
                 enabled: true,
                 displayColors: false,
                 callbacks: {
-                    label: (context) => `${context.dataset.label}`,
+                    label: (context) => {
+                        const startDate = context.raw[0];
+                        const endDate = context.raw[1];
+                        const startFormatted = startDate ? startDate.toLocaleDateString() : 'N/A';
+                        const endFormatted = endDate ? endDate.toLocaleDateString() : 'N/A';
+                        return [
+                            `${context.dataset.label}`,
+                            `Start Date: ${startFormatted}`,
+                            `End Date: ${endFormatted}`
+                        ];
+                        
+                        return [`${context.dataset.label}', '${startFormatted} - ${endFormatted}`];
+                    },
                     title: (tooltipItems) => `Contract for ${tooltipItems[0].label}`,
                 }
             },
             title: {
                 display: true,
-                text: 'BCG Prime Contract Pipeline',
-                font: { size: 20 }
+                text: 'Prime Contract Pipeline',
+                font: {
+                    size: 20,
+                    fontFamily: 'Open Sans', // inherit the font family from the parent element
+                },
+                color: '#3e3e3e', // set the text color to black
             },
         },
         scales: {
